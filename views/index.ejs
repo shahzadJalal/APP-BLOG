@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/styles.css">
+	<link rel="stylesheet" href="/styles1.css">
+	<title>MyBlogApp</title>
+</head>
+<body>
+	<div class="container">  <!--A container div for holding the main content of the page.-->
+		<h1>Click Here to Post Your Blog !! </h1>
+		<a href="/new-post" class="btns">Create A New Post </a> <!--A link styled as a button that redirects to the page for creating a new blog post.-->
+		
+<div class="posts"> <!--A container div for holding all the blog posts.-->
+	<% posts.forEach(post => { %>  <!-- %>: Starts a loop over the posts array. is the EJS syntax for embedding JavaScript code.-->
+	<div class="post"> <!--For each post in the posts array, it creates a new div with the class post-->
+		<h2><%= post.title %></h2>
+		<p> <%= post.content %></p>
+		<a href="/edit-post/ <%= post.id %>"class="btns">Edit</a> <!-- A link styled as a button that redirects to the page for editing the post. 
+		The post.id is used to identify which post to edit.-->
+		<form action ="/delete-post/ <%= post.id %>" method="POST" class="inline-form"> <!--A form for deleting the post. The form's action is set 
+			to the URL for deleting the post, and it uses the POST method.-->
+		<button type="submit" class="btns">Delete </button> <!--A submit button styled as a button that deletes the post when clicked.-->
+		</form>
+	</div>
+	<% }); %>
+</div>
+	</div>
+</body>
+</html>

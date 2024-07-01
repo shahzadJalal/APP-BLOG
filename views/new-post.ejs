@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8>
+	<meta name="viewport" content="width=device-width, intital-scale=1.0">
+	<link rel="stylesheet" href="/styles.css">
+	<link rel="stylesheet" href="/styles2.css">
+	<title>New Post</title>
+</head>
+<body>	
+	<div class="container"> <!--A container div for holding the main content of the page.-->
+		<h1> Create New Post </h1>
+		<form action="/new-post" method="POST"> <!--A form that will submit data to the /new-post route using the POST method.-->
+		<input type="text" name="title" placeholder ="Title" required> <!--An input field for the post title.
+		 The name attribute is set to "title" so that it can be accessed on the server. 
+		 The placeholder attribute provides a hint for the expected input,
+		 and required ensures the field must be filled before the form can be submitted.-->
+		<textarea name="content" placeholder="content" required></textarea> <!--A textarea for the post content. 
+		The name attribute is set to "content", the placeholder provides a hint,
+		 and required ensures the field must be filled.-->
+		<button type="submit" class="btns"> Create Post</button> <!--A submit button that sends the form data to the server. 
+		It is styled using the class btn-->
+</form>
+<a href="/" class="btns"> Back to Home </a>
+</div>
+</body>
+</html>
