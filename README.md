@@ -1,5 +1,7 @@
 Running with node Make sure you have Node.JS v20.15.0 installed
 
+cd APP-BLOG/
+
 npm install
 
 Run the server: node main.js or nodemon main.js
